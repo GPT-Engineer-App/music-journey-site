@@ -1,19 +1,29 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Flex, Heading, Text, VStack, Link, IconButton } from "@chakra-ui/react";
+import { FaBars } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Box bg="brand.900" color="white" minHeight="100vh">
+      <Flex as="nav" justifyContent="space-between" alignItems="center" p={4}>
+        <Heading as="h1" size="lg">BandName Tours</Heading>
+        <IconButton
+          aria-label="Open Menu"
+          icon={<FaBars />}
+          size="lg"
+          variant="outline"
+          display={['flex', 'flex', 'none']}
+        />
+        <Flex as="ul" display={['none', 'none', 'flex']} alignItems="center" listStyleType="none">
+          <Link as="li" p={2} href="#tour-dates">Tour Dates</Link>
+          <Link as="li" p={2} href="#about">About</Link>
+          <Link as="li" p={2} href="#contact">Contact</Link>
+        </Flex>
+      </Flex>
+      <VStack spacing={8} mt={10} align="center" justify="center">
+        <Heading as="h2" size="2xl">Catch Us Live!</Heading>
+        <Text fontSize="xl">Don't miss out on our upcoming tours. Check out the dates and cities we'll be hitting next!</Text>
       </VStack>
-    </Container>
+    </Box>
   );
 };
 
