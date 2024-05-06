@@ -1,17 +1,24 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, Text, VStack, Heading, Button, Box } from "@chakra-ui/react";
+import { FaMusic, FaTicketAlt } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Container maxW="container.xl" p={5} centerContent>
+      <VStack spacing={8} align="stretch">
+        <Box p={5} shadow="md" borderWidth="1px" borderRadius="lg" overflow="hidden">
+          <Heading mb={4}>Band Tour Dates</Heading>
+          <Text fontSize="xl">Check out our latest tour dates and book your tickets now!</Text>
+          <Button rightIcon={<FaTicketAlt />} colorScheme="teal" variant="solid" mt={4}>
+            Book Tickets
+          </Button>
+        </Box>
+        <Box p={5} shadow="md" borderWidth="1px" borderRadius="lg" overflow="hidden">
+          <Heading mb={4}>About the Band</Heading>
+          <Text fontSize="xl">Learn more about the band's history, members, and music style.</Text>
+          <Button rightIcon={<FaMusic />} colorScheme="teal" variant="solid" mt={4}>
+            Learn More
+          </Button>
+        </Box>
       </VStack>
     </Container>
   );
