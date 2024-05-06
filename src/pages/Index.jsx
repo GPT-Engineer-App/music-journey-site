@@ -1,19 +1,28 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Flex, Heading, Text, Button, useBreakpointValue } from '@chakra-ui/react';
+import { FaMusic } from 'react-icons/fa';
 
 const Index = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box bg="brand.700" color="white" minHeight="100vh" p={4}>
+      <Flex direction="column" align="center" justify="center" minHeight="100vh">
+        <Heading as="h1" size="2xl" mb={2}>
+          <FaMusic /> The Band Tour
+        </Heading>
+        <Text fontSize="xl" mb={4}>
+          Catch us live on tour!
+        </Text>
+        <Button colorScheme="blue" size={isMobile ? "md" : "lg"}>
+          Tour Dates
+        </Button>
+        <Flex mt={10} width="100%" justify="space-evenly">
+          <Button colorScheme="green">About Us</Button>
+          <Button colorScheme="red">Gallery</Button>
+          <Button colorScheme="purple">Contact</Button>
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 
