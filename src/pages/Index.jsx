@@ -1,19 +1,28 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Flex, Heading, Text, Button, Image, useBreakpointValue } from '@chakra-ui/react';
+import { FaMusic, FaTicketAlt, FaInfoCircle } from 'react-icons/fa';
 
 const Index = () => {
+  const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
+
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box bg="brand.900" color="white" minHeight="100vh" py={10}>
+      <Flex direction="column" align="center" justify="center" py={10}>
+        <Heading as="h1" size="2xl" mb={6}>The Band Tour</Heading>
+        <Text fontSize="xl" mb={6}>Join us on our latest tour across the globe!</Text>
+        <Image src="https://via.placeholder.com/600x400" alt="Band Image" borderRadius="lg" mb={6} />
+        <Flex gap={4}>
+          <Button leftIcon={<FaTicketAlt />} colorScheme="teal" size={buttonSize}>
+            Buy Tickets
+          </Button>
+          <Button leftIcon={<FaMusic />} colorScheme="purple" size={buttonSize}>
+            Listen
+          </Button>
+          <Button leftIcon={<FaInfoCircle />} colorScheme="orange" size={buttonSize}>
+            Learn More
+          </Button>
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 
