@@ -1,19 +1,24 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Flex, Heading, Text, VStack, Button, Image } from "@chakra-ui/react";
+import { FaMusic, FaTicketAlt } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Box bg="gray.800" color="white" minHeight="100vh">
+      <Flex direction="column" align="center" justify="center" p={10}>
+        <Heading as="h1" size="2xl" mb={4}>Live Tours</Heading>
+        <Text fontSize="xl" mb={6}>Experience the magic of live music!</Text>
+        <Button leftIcon={<FaTicketAlt />} colorScheme="teal" variant="solid" size="lg">
+          Buy Tickets
+        </Button>
+      </Flex>
+      <VStack spacing={8} mt={10}>
+        <Flex direction="column" align="center" justify="center">
+          <FaMusic size="3em" />
+          <Text fontSize="lg">Upcoming Tours</Text>
+        </Flex>
+        <Image src="https://via.placeholder.com/600x400" alt="Band Image" />
       </VStack>
-    </Container>
+    </Box>
   );
 };
 
